@@ -1,5 +1,60 @@
-
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/jetbrains-mono";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --app-background: hsla(228, 12%, 8%);
+  --app-accent: hsla(219, 44%, 13%);
+
+  --mz-accent: #41a1ff;
+  --mz-accent-variant: #19496f;
+  --mz-accent-foreground: #e6e6e6;
+
+  /* ZED THEME VARIABLES */
+  --mz-canvas-default: #111111;
+
+  --mz-panel-background: #111111;
+
+  --mz-border: #111111;
+  --mz-border-variant: #111111;
+  --mz-border-focused: #3c3c3c;
+  --mz-border-selected: #202020;
+  --mz-border-disabled: #1b1c1d;
+
+  --mz-text: #e6e6e6;
+  --mz-text-muted: #606164;
+
+  --background: var(--mz-canvas-default);
+  --foreground: var(--mz-text);
+  --card: var(--mz-panel-background);
+  --card-foreground: var(--mz-text);
+  --popover: var(--mz-panel-background);
+  --popover-foreground: var(--mz-text);
+  --primary: var(--mz-accent);
+  --primary-foreground: var(--mz-accent-foreground);
+  --secondary: var(--mz-border-selected);
+  --secondary-foreground: var(--mz-text);
+  --muted: var(--mz-border-selected);
+  --muted-foreground: var(--mz-text-muted);
+  --accent: var(--mz-border-selected);
+  --accent-foreground: var(--mz-text);
+  --destructive: #78081a;
+  --border: var(--mz-border-selected);
+  --input: var(--mz-border-selected);
+  --ring: var(--mz-border-focused);
+  --radius: 0.45rem;
+  --sidebar: var(--mz-panel-background);
+  --sidebar-foreground: var(--mz-text);
+  --sidebar-primary: var(--mz-text);
+  --sidebar-primary-foreground: var(--mz-canvas-default);
+  --sidebar-accent: var(--mz-border-selected);
+  --sidebar-accent-foreground: var(--mz-text);
+  --sidebar-border: var(--mz-border);
+  --sidebar-ring: var(--mz-border-focused);
+}
 
 * {
   box-sizing: border-box;
@@ -15,3 +70,72 @@ body {
   margin: 0;
 }
 
+@theme inline {
+  --color-app-background: var(--app-background);
+  --color-app-accent: var(--app-accent);
+
+  --color-mz-canvas-default: var(--mz-canvas-default);
+
+  --color-mz-panel-background: var(--mz-panel-background);
+
+  --color-mz-border: var(--mz-border);
+  --color-mz-border-variant: var(--mz-border-variant);
+  --color-mz-border-focused: var(--mz-border-focused);
+  --color-mz-border-selected: var(--mz-border-selected);
+  --color-mz-border-disabled: var(--mz-border-disabled);
+
+  --color-mz-text: var(--mz-text);
+  --color-mz-text-muted: var(--mz-text-muted);
+
+  --font-heading: var(--font-mono);
+  --font-mono: "JetBrains Mono Variable", monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-mono;
+  }
+}
