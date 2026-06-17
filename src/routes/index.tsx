@@ -1,13 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router"
-import AppFrame from "#/components/layout/app-frame"
-import MyZed from "#/components/my-zed"
+import { createFileRoute, redirect } from "@tanstack/react-router"
 
-export const Route = createFileRoute("/")({ component: Home })
-
-function Home() {
-	return (
-		<AppFrame>
-			<MyZed />
-		</AppFrame>
-	)
-}
+export const Route = createFileRoute("/")({
+	beforeLoad: () => {
+		throw redirect({
+			to: "/my-zed",
+			statusCode: 301,
+		})
+	},
+})
