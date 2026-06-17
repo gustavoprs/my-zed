@@ -13,7 +13,7 @@ const FILE_TREE = [
 				],
 			},
 			{
-				path: "/my-zed/README.ts",
+				path: "/my-zed/README.md",
 			},
 		],
 	},

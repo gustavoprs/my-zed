@@ -26,7 +26,7 @@ export default function FileTreeItem({
 }: FileTreeItemProps) {
 	const fileName = item.path.split("/").pop()
 	if (!fileName) {
-		return
+		return null
 	}
 
 	if (!item.children) {
@@ -40,7 +40,13 @@ export default function FileTreeItem({
 				}
 				style={{ paddingLeft: `${level * 20 + 6}px` }}
 				render={
-					<Link to={item.path}>
+					<Link
+						to={item.path}
+						activeProps={{
+							className: "!border-mz-border-focused !bg-accent !text-mz-text",
+						}}
+						activeOptions={{ exact: true }}
+					>
 						<FileTreeIcon extension={extension} />
 						{fileName}
 					</Link>
@@ -73,7 +79,7 @@ export default function FileTreeItem({
 					<hr className="w-px h-full bg-mz-text/10" />
 				</div>
 				{item.children.map((item) => (
-					<FileTreeItem key={`${fileName}`} item={item} level={level + 1} />
+					<FileTreeItem key={item.path} item={item} level={level + 1} />
 				))}
 			</CollapsibleContent>
 		</Collapsible>
