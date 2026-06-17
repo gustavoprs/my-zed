@@ -3,16 +3,13 @@ import {
 	ComputerIcon,
 	GitBranchIcon,
 	MenuIcon,
-	MinusIcon,
 	SplitIcon,
-	SquareIcon,
-	XIcon,
 } from "lucide-react"
 import { Button } from "#/components/ui/button"
 
 export default function TitleBar() {
 	return (
-		<header className="flex justify-between items-center w-full max-h-8 min-h-8">
+		<div className="flex justify-between items-center flex-1 h-full">
 			<div className="flex gap-0.5 pl-1.5">
 				<Button size={"icon"} variant={"ghost"} className={"size-6"}>
 					<MenuIcon />
@@ -56,30 +53,7 @@ export default function TitleBar() {
 				<Button size={"icon"} variant={"ghost"} className={"size-6"}>
 					<ChevronDownIcon />
 				</Button>
-				<div className="flex h-full">
-					<Button
-						size={"icon"}
-						variant={"ghost"}
-						className={"rounded-none border-0 w-9 h-8"}
-					>
-						<MinusIcon className="size-4" />
-					</Button>
-					<Button
-						size={"icon"}
-						variant={"ghost"}
-						className={"rounded-none border-0 w-9 h-8"}
-					>
-						<SquareIcon className="size-3" />
-					</Button>
-					<Button
-						size={"icon"}
-						variant={"ghost"}
-						className={"rounded-none border-0 w-9 h-8 hover:bg-red-600"}
-					>
-						<XIcon className="size-4.5" />
-					</Button>
-				</div>
 			</div>
-		</header>
+		</div>
 	)
 }
