@@ -13,11 +13,11 @@ export default function MyZed() {
 }
 
 function MyZedWindow() {
-	const { isFullscreen, maximizeWindow, restoreWindow } = useWorkspace()
+	const { isMaximized: isFullscreen, maximizeWindow, restoreWindow } = useWorkspace()
 
 	return (
 		<Window
-			isFullscreen={isFullscreen}
+			isMaximized={isFullscreen}
 			onMaximize={maximizeWindow}
 			onRestore={restoreWindow}
 			titleBar={<TitleBar />}

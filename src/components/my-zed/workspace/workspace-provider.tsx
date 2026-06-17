@@ -1,7 +1,7 @@
 import { createContext, useState } from "react"
 
 type WorkspaceContextValue = {
-	isFullscreen: boolean
+	isMaximized: boolean
 	maximizeWindow: () => void
 	restoreWindow: () => void
 	toggleFullscreen: () => void
@@ -12,22 +12,22 @@ export const WorkspaceContext = createContext<WorkspaceContextValue | null>(
 )
 
 export function WorkspaceProvider({ children }: { children: React.ReactNode }) {
-	const [isFullscreen, setIsFullscreen] = useState(false)
+	const [isMaximized, setIsMaximized] = useState(false)
 
 	function maximizeWindow() {
-		setIsFullscreen(true)
+		setIsMaximized(true)
 	}
 
 	function restoreWindow() {
-		setIsFullscreen(false)
+		setIsMaximized(false)
 	}
 
 	function toggleFullscreen() {
-		setIsFullscreen((prev) => !prev)
+		setIsMaximized((prev) => !prev)
 	}
 
 	const value = {
-		isFullscreen,
+		isMaximized,
 		maximizeWindow,
 		restoreWindow,
 		toggleFullscreen,
