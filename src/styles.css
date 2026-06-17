@@ -75,6 +75,10 @@ body {
   --color-app-background: var(--app-background);
   --color-app-accent: var(--app-accent);
 
+  --color-mz-accent: var(--mz-accent);
+  --color-mz-accent-variant: var(--mz-accent-variant);
+  --color-mz-accent-foreground: var(--mz-accent-foreground);
+
   --color-mz-canvas-default: var(--mz-canvas-default);
 
   --color-mz-panel-background: var(--mz-panel-background);
