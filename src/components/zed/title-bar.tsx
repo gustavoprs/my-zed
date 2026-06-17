@@ -1,0 +1,85 @@
+import {
+	ChevronDownIcon,
+	ComputerIcon,
+	GitBranchIcon,
+	MenuIcon,
+	MinusIcon,
+	SplitIcon,
+	SquareIcon,
+	XIcon,
+} from "lucide-react"
+import { Button } from "#/components/ui/button"
+
+export default function TitleBar() {
+	return (
+		<header className="flex justify-between items-center w-full max-h-8 min-h-8">
+			<div className="flex gap-0.5 pl-1.5">
+				<Button size={"icon"} variant={"ghost"} className={"size-6"}>
+					<MenuIcon />
+				</Button>
+				<Button variant={"ghost"} className={"gap-2 px-1 h-6"}>
+					<div className="relative">
+						<ComputerIcon />
+						<span className="absolute -bottom-px -right-px border-2 rounded-full size-2.5 border-mz-canvas-default bg-success"></span>
+					</div>
+					Ubuntu
+				</Button>
+				<Button variant={"ghost"} className={"px-1 h-6"}>
+					my-zed
+				</Button>
+				<div className="flex items-center gap-px">
+					<Button
+						variant={"ghost"}
+						className={
+							"gap-1.5 px-1 h-6 text-mz-text-muted hover:text-mz-text-muted"
+						}
+					>
+						<SplitIcon className="rotate-90 size-3" />
+						main
+					</Button>
+					<span className="text-sm text-mz-text-muted/25">/</span>
+					<Button
+						variant={"ghost"}
+						className={
+							"gap-1.5 px-1 h-6 text-mz-text-muted hover:text-mz-text-muted"
+						}
+					>
+						<GitBranchIcon className="size-3" />
+						main
+					</Button>
+				</div>
+			</div>
+			<div className="flex items-center gap-1 h-full">
+				<Button variant={"ghost"} className={"px-1 h-6"}>
+					Sign In
+				</Button>
+				<Button size={"icon"} variant={"ghost"} className={"size-6"}>
+					<ChevronDownIcon />
+				</Button>
+				<div className="flex h-full">
+					<Button
+						size={"icon"}
+						variant={"ghost"}
+						className={"rounded-none border-0 w-9 h-8"}
+					>
+						<MinusIcon className="size-4" />
+					</Button>
+					<Button
+						size={"icon"}
+						variant={"ghost"}
+						className={"rounded-none border-0 w-9 h-8"}
+					>
+						<SquareIcon className="size-3" />
+					</Button>
+					<Button
+						size={"icon"}
+						variant={"ghost"}
+						className={"rounded-none border-0 w-9 h-8 hover:bg-red-600"}
+					>
+						<XIcon className="size-4.5" />
+					</Button>
+				</div>
+			</div>
+		</header>
+	)
+}
