@@ -1,4 +1,6 @@
-import TabBar from "#/components/my-zed/workspace/tab-bar"
+import EditorPane from "#/components/my-zed/workspace/editor/editor-pane"
+import EditorToolbar from "#/components/my-zed/workspace/editor/editor-toolbar"
+import TabBar from "#/components/my-zed/workspace/editor/tab-bar"
 import type { ActiveFile } from "#/lib/types"
 
 interface EditorProps {
@@ -6,5 +8,11 @@ interface EditorProps {
 }
 
 export default function Editor({ file }: EditorProps) {
-	return <TabBar activeFile={file} />
+	return (
+		<div className="flex flex-col h-full overflow-hidden">
+			<TabBar activeFile={file} />
+			<EditorToolbar file={file} />
+			<EditorPane />
+		</div>
+	)
 }

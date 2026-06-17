@@ -5,7 +5,7 @@ import {
 	Maximize2Icon,
 	PlusIcon,
 } from "lucide-react"
-import FileTab from "#/components/my-zed/workspace/tab-bar/file-tab"
+import FileTab from "#/components/my-zed/workspace/editor/tab-bar/file-tab"
 import { Button } from "#/components/ui/button"
 import type { ActiveFile } from "#/lib/types"
 
