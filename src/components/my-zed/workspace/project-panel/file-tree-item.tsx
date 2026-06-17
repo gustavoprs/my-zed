@@ -7,14 +7,10 @@ import {
 	CollapsibleContent,
 	CollapsibleTrigger,
 } from "#/components/ui/collapsible"
-
-type Item = {
-	path: string
-	children?: Item[]
-}
+import type { WorkspaceTreeItem } from "#/lib/types"
 
 interface FileTreeItemProps {
-	item: Item
+	item: WorkspaceTreeItem
 	level?: number
 	defaultOpen?: boolean
 }
@@ -36,7 +32,7 @@ export default function FileTreeItem({
 			<Button
 				variant={"ghost"}
 				className={
-					"justify-start rounded-none w-full text-sm text-mz-text-muted transition-none hover:border-mz-border-focused hover:text-mz-text-muted aria-expanded:bg-transparent aria-expanded:text-mz-text-muted hover:aria-expanded:bg-accent"
+					"justify-start gap-1.5 rounded-none w-full text-sm text-mz-text-muted transition-none hover:border-mz-border-focused hover:text-mz-text-muted aria-expanded:bg-transparent aria-expanded:text-mz-text-muted hover:aria-expanded:bg-accent"
 				}
 				style={{ paddingLeft: `${level * 20 + 6}px` }}
 				render={
@@ -62,7 +58,7 @@ export default function FileTreeItem({
 					<Button
 						variant={"ghost"}
 						className={
-							"justify-start rounded-none w-full text-sm text-mz-text-muted transition-none hover:border-mz-border-focused hover:text-mz-text-muted aria-expanded:bg-transparent aria-expanded:text-mz-text-muted hover:aria-expanded:bg-accent"
+							"justify-start gap-1.5 rounded-none w-full text-sm text-mz-text-muted transition-none hover:border-mz-border-focused hover:text-mz-text-muted aria-expanded:bg-transparent aria-expanded:text-mz-text-muted hover:aria-expanded:bg-accent"
 						}
 						style={{ paddingLeft: `${level * 20 + 6}px` }}
 					>

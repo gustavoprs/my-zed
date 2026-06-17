@@ -1,18 +1,18 @@
 import { SearchIcon, Settings2Icon, TextCursorIcon } from "lucide-react"
 import { Button } from "#/components/ui/button"
-import type { ActiveFile } from "#/lib/types"
+import type { WorkspaceFile } from "#/lib/types"
 
 interface EditorToolbarProps {
-	file: ActiveFile
+	file: WorkspaceFile
 }
 
 export default function EditorToolbar({ file }: EditorToolbarProps) {
 	return (
-		<div className="flex justify-between items-center px-1.5 w-full max-h-9 min-h-9">
+		<div className="flex justify-between items-center px-1.5 w-full max-h-10 min-h-10">
 			<Button
 				variant={"ghost"}
 				className={
-					"h-6 text-base font-light font-mono text-mz-text-muted hover:text-mz-text-muted"
+					"px-1 h-6 text-base font-light font-mono text-mz-text-muted hover:text-mz-text-muted"
 				}
 			>
 				{file.path.replace("/my-zed/", "")}

@@ -1,0 +1,21 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-b": "workspace::ToggleLeftDock",
+      "ctrl-b": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-enter": "editor::NewlineBelow"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-enter": "editor::NewlineAbove"
+    }
+  }
+]

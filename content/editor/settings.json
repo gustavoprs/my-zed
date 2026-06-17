@@ -1,0 +1,112 @@
+{
+	"cli_default_open_behavior": "existing_window",
+	"outline_panel": {
+		"dock": "left"
+	},
+	"collaboration_panel": {
+		"dock": "left"
+	},
+	"agent": {
+		"dock": "right",
+		"favorite_models": [],
+		"model_parameters": []
+	},
+	"git_panel": {
+		"dock": "left",
+		"tree_view": false
+	},
+	"colorize_brackets": false,
+	"disable_ai": true,
+	"agent_ui_font_size": 16.0,
+	"buffer_font_family": "JetBrains Mono",
+	"buffer_font_size": 15.0,
+	"buffer_font_weight": 400.0,
+	"buffer_line_height": "comfortable",
+	"buffer_font_features": {
+		"calt": true
+	},
+	"tabs": {
+		"file_icons": true
+	},
+	"restore_on_startup": "launchpad",
+	"ui_font_family": "Segoe UI",
+	"terminal": {
+		"font_size": 16.0
+	},
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false
+	},
+	"project_panel": {
+		"dock": "right",
+		"auto_fold_dirs": false
+	},
+	"vertical_scroll_margin": 100.0,
+	"minimap": {
+		"show": "never"
+	},
+	"autosave": {
+		"after_delay": {
+			"milliseconds": 1000
+		}
+	},
+	"file_types": {},
+	"linked_edits": true,
+	"show_whitespaces": "none",
+	"indent_guides": {
+		"coloring": "fixed",
+		"background_coloring": "disabled",
+		"enabled": true
+	},
+	"soft_wrap": "editor_width",
+	"hard_tabs": true,
+	"tab_size": 2,
+	"base_keymap": "VSCode",
+	"icon_theme": {
+		"mode": "dark",
+		"light": "Zed (Default)",
+		"dark": "Clean VSCode Icon Theme"
+	},
+	"ui_font_size": 17.0,
+	"theme": {
+		"mode": "dark",
+		"light": "One Light",
+		"dark": "Min Darkest Dracula"
+	},
+	"semantic_tokens": "combined",
+	"global_lsp_settings": {
+		"semantic_token_rules": [
+			{
+				"token_type": "function",
+				"style": ["function"]
+			},
+			{
+				"token_type": "variable",
+				"token_modifiers": ["readonly"],
+				"style": ["constant"]
+			},
+			{
+				"token_type": "parameter",
+				"style": ["variable.parameter"]
+			}
+		]
+	},
+	"languages": {
+		"PHP": {
+			"language_servers": ["phpactor", "intelephense"],
+			"format_on_save": "on",
+			"formatter": {
+				"language_server": {
+					"name": "intelephense"
+				}
+			}
+		}
+	},
+	"lsp": {
+		"phpactor": {
+			"initialization_options": {
+				"phpactor.platform_version": "7.4"
+			}
+		}
+	}
+}

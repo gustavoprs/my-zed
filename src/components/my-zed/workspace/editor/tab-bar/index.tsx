@@ -7,10 +7,10 @@ import {
 } from "lucide-react"
 import FileTab from "#/components/my-zed/workspace/editor/tab-bar/file-tab"
 import { Button } from "#/components/ui/button"
-import type { ActiveFile } from "#/lib/types"
+import type { WorkspaceFile } from "#/lib/types"
 
 interface TabBarProps {
-	activeFile: ActiveFile
+	activeFile: WorkspaceFile
 }
 
 export default function TabBar({ activeFile }: TabBarProps) {
