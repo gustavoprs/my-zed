@@ -35,7 +35,7 @@ export default function TitleBar() {
 						<SplitIcon className="rotate-90 size-3" />
 						main
 					</Button>
-					<span className="text-sm text-mz-text-muted/25">/</span>
+					<span className="text-sm text-mz-text-muted/25 select-none">/</span>
 					<Button
 						variant={"ghost"}
 						className={

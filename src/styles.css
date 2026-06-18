@@ -61,6 +61,15 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: color-mix(
+    in oklab,
+    var(--mz-accent-variant) 50%,
+    transparent
+  );
+  color: inherit;
+}
+
 html,
 body,
 #app {
