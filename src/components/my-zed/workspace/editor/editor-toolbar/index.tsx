@@ -14,6 +14,7 @@ export default function EditorToolbar({ file }: EditorToolbarProps) {
 				className={
 					"px-1 h-6 text-base font-light font-mono text-mz-text-muted hover:text-mz-text-muted"
 				}
+				disabled
 			>
 				{file.path.replace("/my-zed/", "")}
 			</Button>
