@@ -35,6 +35,7 @@ export default function FileTreeItem({
 					"justify-start gap-1.5 rounded-none w-full text-sm text-mz-text-muted transition-none hover:border-mz-border-focused hover:text-mz-text-muted aria-expanded:bg-transparent aria-expanded:text-mz-text-muted hover:aria-expanded:bg-accent"
 				}
 				style={{ paddingLeft: `${level * 20 + 6}px` }}
+				nativeButton={false}
 				render={
 					<Link
 						to={item.path}

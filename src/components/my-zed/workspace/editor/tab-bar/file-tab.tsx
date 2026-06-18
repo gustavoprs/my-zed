@@ -13,33 +13,37 @@ export default function FileTab({ file }: FileTabProps) {
 	const fileName = file.path.split("/").pop()
 
 	return (
-		<Button
-			variant={"ghost"}
-			className={
-				"group ps-5 pe-1 h-full text-sm hover:bg-transparent text-mz-text-muted hover:text-mz-text-muted"
-			}
-			render={
-				<Link
-					to={file.path}
-					activeProps={{ className: "!text-mz-text" }}
-					activeOptions={{ exact: true }}
-				>
-					<FileTreeIcon extension={fileName?.split(".").pop() ?? "txt"} />
-					{fileName}
-					<Button
-						size={"icon-xs"}
-						variant={"ghost"}
-						className={
-							"opacity-0 text-mz-text-muted hover:text-mz-text-muted group-hover:opacity-100"
-						}
-						render={
-							<Link to="/my-zed">
-								<XIcon />
-							</Link>
-						}
-					/>
-				</Link>
-			}
-		/>
+		<div className="group flex items-center relative">
+			<Button
+				variant={"ghost"}
+				className={
+					"px-5 pe-5.5 h-full text-sm hover:bg-transparent text-mz-text-muted hover:text-mz-text-muted"
+				}
+				nativeButton={false}
+				render={
+					<Link
+						to={file.path}
+						activeProps={{ className: "!text-mz-text" }}
+						activeOptions={{ exact: true }}
+					>
+						<FileTreeIcon extension={fileName?.split(".").pop() ?? "txt"} />
+						{fileName}
+					</Link>
+				}
+			/>
+			<Button
+				size={"icon-xs"}
+				variant={"ghost"}
+				className={
+					"absolute right-px opacity-0 text-mz-text-muted hover:text-mz-text-muted group-hover:opacity-100"
+				}
+				nativeButton={false}
+				render={
+					<Link to="/my-zed">
+						<XIcon />
+					</Link>
+				}
+			/>
+		</div>
 	)
 }
