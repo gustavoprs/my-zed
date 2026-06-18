@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MyZedRouteImport } from './routes/my-zed'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MyZedIndexRouteImport } from './routes/my-zed.index'
 import { Route as MyZedSplatRouteImport } from './routes/my-zed.$'
 
 const MyZedRoute = MyZedRouteImport.update({
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyZedIndexRoute = MyZedIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MyZedRoute,
+} as any)
 const MyZedSplatRoute = MyZedSplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -33,24 +39,26 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/my-zed': typeof MyZedRouteWithChildren
   '/my-zed/$': typeof MyZedSplatRoute
+  '/my-zed/': typeof MyZedIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/my-zed': typeof MyZedRouteWithChildren
   '/my-zed/$': typeof MyZedSplatRoute
+  '/my-zed': typeof MyZedIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/my-zed': typeof MyZedRouteWithChildren
   '/my-zed/$': typeof MyZedSplatRoute
+  '/my-zed/': typeof MyZedIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/my-zed' | '/my-zed/$'
+  fullPaths: '/' | '/my-zed' | '/my-zed/$' | '/my-zed/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/my-zed' | '/my-zed/$'
-  id: '__root__' | '/' | '/my-zed' | '/my-zed/$'
+  to: '/' | '/my-zed/$' | '/my-zed'
+  id: '__root__' | '/' | '/my-zed' | '/my-zed/$' | '/my-zed/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -74,6 +82,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-zed/': {
+      id: '/my-zed/'
+      path: '/'
+      fullPath: '/my-zed/'
+      preLoaderRoute: typeof MyZedIndexRouteImport
+      parentRoute: typeof MyZedRoute
+    }
     '/my-zed/$': {
       id: '/my-zed/$'
       path: '/$'
@@ -86,10 +101,12 @@ declare module '@tanstack/react-router' {
 
 interface MyZedRouteChildren {
   MyZedSplatRoute: typeof MyZedSplatRoute
+  MyZedIndexRoute: typeof MyZedIndexRoute
 }
 
 const MyZedRouteChildren: MyZedRouteChildren = {
   MyZedSplatRoute: MyZedSplatRoute,
+  MyZedIndexRoute: MyZedIndexRoute,
 }
 
 const MyZedRouteWithChildren = MyZedRoute._addFileChildren(MyZedRouteChildren)
