@@ -3,28 +3,18 @@
 This workspace contains my personal development environment configuration,
 tooling presets, templates, commands, and setup documentation.
 
-## Structure
+## Automation
 
-```txt
-editor/
-tooling/
-```
+Contains reusable workflows for continuous integration and other automated project tasks.
 
 ## Editor
 
 Contains global editor preferences and keybindings.
 
-```txt
-editor/settings.json
-editor/keymap.json
-```
+## Infrastructure
+
+Contains reusable local infrastructure and development service configurations.
 
 ## Tooling
 
 Contains configuration presets and setup notes for tools and languages.
-
-Examples:
-
-```txt
-tooling/biome/
-```
