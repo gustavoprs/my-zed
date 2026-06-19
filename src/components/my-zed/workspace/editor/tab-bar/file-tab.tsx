@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router"
 import { XIcon } from "lucide-react"
-import FileTreeIcon from "#/components/my-zed/workspace/project-panel/file-tree-icon"
+import FileIcon from "#/components/file-icon"
 import { Button } from "#/components/ui/button"
 
 interface FileTabProps {
@@ -11,6 +11,10 @@ interface FileTabProps {
 
 export default function FileTab({ file }: FileTabProps) {
 	const fileName = file.path.split("/").pop()
+
+	if (!fileName) {
+		return
+	}
 
 	return (
 		<div className="group flex items-center relative">
@@ -26,7 +30,10 @@ export default function FileTab({ file }: FileTabProps) {
 						activeProps={{ className: "!text-mz-text" }}
 						activeOptions={{ exact: true }}
 					>
-						<FileTreeIcon extension={fileName?.split(".").pop() ?? "txt"} />
+						<FileIcon
+							fileName={fileName}
+							fileExtension={fileName?.split(".").pop()}
+						/>
 						{fileName}
 					</Link>
 				}

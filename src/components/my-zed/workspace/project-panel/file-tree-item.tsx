@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router"
 import { FolderIcon, FolderOpenIcon } from "lucide-react"
-import FileTreeIcon from "#/components/my-zed/workspace/project-panel/file-tree-icon"
+import FileIcon from "#/components/file-icon"
 import { Button } from "#/components/ui/button"
 import {
 	Collapsible,
@@ -44,7 +44,7 @@ export default function FileTreeItem({
 						}}
 						activeOptions={{ exact: true }}
 					>
-						<FileTreeIcon extension={extension} />
+						<FileIcon fileName={fileName} fileExtension={extension} />
 						{fileName}
 					</Link>
 				}

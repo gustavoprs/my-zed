@@ -1,5 +1,5 @@
 import { ScrollArea } from "#/components/ui/scroll-area"
-import { getLanguage, highlighter } from "#/lib/highlighter"
+import { getLanguage, highlighter } from "#/lib/highlighting/highlighter"
 import type { WorkspaceFile } from "#/lib/types"
 import { cn } from "#/lib/utils"
 
@@ -8,7 +8,7 @@ interface EditorPaneProps {
 }
 
 export default function EditorPane({ file }: EditorPaneProps) {
-	const lang = getLanguage(file.extension)
+	const lang = getLanguage(file.name, file.extension)
 
 	const { tokens } = highlighter.codeToTokens(file.content, {
 		theme: "dracula",

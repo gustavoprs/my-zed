@@ -7,6 +7,7 @@ const contentModules = import.meta.glob<string>("/content/**/*", {
 	query: "?raw",
 	import: "default",
 	eager: true,
+	exhaustive: true,
 })
 
 export const workspaceFiles = Object.entries(contentModules)
