@@ -11,7 +11,7 @@ export default function Workspace() {
 					<Outlet />
 				</ResizablePanel>
 				<ResizablePanel
-					defaultSize={"250px"}
+					defaultSize={"300px"}
 					groupResizeBehavior="preserve-pixel-size"
 				>
 					<ProjectPanel />
